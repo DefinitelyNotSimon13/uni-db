@@ -5,8 +5,8 @@
 
 Makefile kann genutzt werden um Datenbanken zu erstellen/zurückzusetzen
 
-Standard anmeldung:
-_phpMyAdmin is verfügbar über localhost:8090_
+Standard anmeldung: <br>
+_phpMyAdmin is [hier](http://localhost:8090) verfügbar_
 
 - Nutzername: root
 - Password: password
