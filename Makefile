@@ -36,5 +36,5 @@ init_docker_config:
 
 reset_docker:
 	sudo docker-compose stop
-	sudo docker-compose rm
+	yes | sudo docker-compose rm
 	sudo docker-compose up -d

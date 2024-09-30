@@ -29,7 +29,7 @@ services:
     networks:
       - mariadb-phpmyadmin
     volumes:
-      - "/opt/docker/configs/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.uer.inc.php:ro"
+      - "/opt/docker/configs/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php"
       - "/opt/docker/configs/phpmyadmin/themes/blueberry:/var/www/html/themes/blueberry:ro"
       - "/opt/docker/configs/phpmyadmin/themes/darkwolf:/var/www/html/themes/darkwolf:ro"
       - "/opt/docker/configs/phpmyadmin/themes/boodark-orange:/var/www/html/themes/boodark-orange:ro"
