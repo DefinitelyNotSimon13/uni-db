@@ -5,9 +5,10 @@ services:
     image: mariadb:lts-ubi9
     volumes:
       - db_data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
     restart: always
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: uni
@@ -28,11 +29,11 @@ services:
       MYSQL_ROOT_PASSWORD: password
     networks:
       - mariadb-phpmyadmin
-    volumes:
-      - "/opt/docker/configs/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php"
-      - "/opt/docker/configs/phpmyadmin/themes/blueberry:/var/www/html/themes/blueberry:ro"
-      - "/opt/docker/configs/phpmyadmin/themes/darkwolf:/var/www/html/themes/darkwolf:ro"
-      - "/opt/docker/configs/phpmyadmin/themes/boodark-orange:/var/www/html/themes/boodark-orange:ro"
+    # volumes:
+    #   - "/opt/docker/configs/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php"
+    #   - "/opt/docker/configs/phpmyadmin/themes/blueberry:/var/www/html/themes/blueberry:ro"
+    #   - "/opt/docker/configs/phpmyadmin/themes/darkwolf:/var/www/html/themes/darkwolf:ro"
+    #   - "/opt/docker/configs/phpmyadmin/themes/boodark-orange:/var/www/html/themes/boodark-orange:ro"
 networks:
   mariadb-phpmyadmin:
 

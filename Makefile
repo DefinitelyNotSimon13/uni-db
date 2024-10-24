@@ -1,4 +1,5 @@
-COMMAND := mariadb --host localhost --port 3306 --user root -ppassword
+DOCKER_PORT := 3307
+COMMAND := mariadb --host localhost --port ${DOCKER_PORT} --user root -ppassword
 DOCKER_CONFIG := /opt/docker/configs/phpmyadmin
 
 run:
@@ -14,7 +15,7 @@ init_docker: init_docker_config run
 
 init_db: create_dbs init_smalldb init_smalldbnolinks
 
-reset: drop_dbs init
+reset: drop_dbs init_db
 
 create_dbs:
 	${COMMAND} < base/createdbs.sql
